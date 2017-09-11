@@ -18,18 +18,17 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import bku.fitnessbku.gym.GymFragmentStatePagerAdapter;
+import bku.fitnessbku.room.RoomFragmentStatePagerAdapter;
 
 /**
- * Created by 51202 on 9/6/2017.
+ * Created by 51202 on 9/10/2017.
  */
 
-public class GymActivity extends AppCompatActivity {
-
+public class GymRoomActivity extends AppCompatActivity {
     private Drawer result = null;
     private AccountHeader headerResult = null;
 
     private IProfile profile;
-
     @Override
     public void onCreate(Bundle savedBundle){
         super.onCreate(savedBundle);
@@ -37,15 +36,13 @@ public class GymActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(R.string.menu_gym);
-        GymFragmentStatePagerAdapter pagerAdapter = new GymFragmentStatePagerAdapter(getSupportFragmentManager());
+        getSupportActionBar().setTitle("Room");
+        RoomFragmentStatePagerAdapter pagerAdapter = new RoomFragmentStatePagerAdapter(getSupportFragmentManager());
         ViewPager gymPager = findViewById(R.id.pager);
         gymPager.setAdapter(pagerAdapter);
-
         profile = new ProfileDrawerItem().withName("Guest").withIcon(getResources().getDrawable(R.drawable.profile2));
 
         buildHeader(false, savedBundle);
-
         result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
@@ -64,27 +61,27 @@ public class GymActivity extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             switch ((int)drawerItem.getIdentifier()){
+                                case 1:
+                                    intent = new Intent(GymRoomActivity.this, GymActivity.class);
+                                    break;
                                 case 2:
-                                    intent = new Intent(GymActivity.this, TargetActivity.class);
+                                    intent = new Intent(GymRoomActivity.this, TargetActivity.class);
                                     break;
                                 case 3:
-                                    intent = new Intent(GymActivity.this, FoodActivity.class);
+                                    intent = new Intent(GymRoomActivity.this, FoodActivity.class);
                                     break;
                                 case 4:
-                                    intent = new Intent(GymActivity.this, HistoryActivity.class);
+                                    intent = new Intent(GymRoomActivity.this, HistoryActivity.class);
                                     break;
                                 case 5:
-                                    intent = new Intent(GymActivity.this, BodyInfoActivity.class);
-                                    break;
-                                case 6:
-                                    intent = new Intent(GymActivity.this, GymRoomActivity.class);
+                                    intent = new Intent(GymRoomActivity.this, BodyInfoActivity.class);
                                     break;
                                 default:
                                     break;
                             }
                             if (intent != null) {
-                                GymActivity.this.startActivity(intent);
-                                GymActivity.this.finish();
+                                GymRoomActivity.this.startActivity(intent);
+                                GymRoomActivity.this.finish();
                             }
                         }
                         return false;
@@ -92,7 +89,7 @@ public class GymActivity extends AppCompatActivity {
                 })
                 .withSavedInstance(savedBundle)
                 .withShowDrawerOnFirstLaunch(true).build();
-        result.setSelection(1);
+        result.setSelection(6);
     }
 
     private void buildHeader(boolean compact, Bundle savedInstanceState) {
@@ -113,7 +110,6 @@ public class GymActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
     }
-
     @Override
     public void onBackPressed() {
         //handle the back press :D close the drawer first and if the drawer is closed close the activity

@@ -2,9 +2,11 @@ package bku.fitnessbku;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.mikepenz.itemanimators.AlphaCrossFadeAnimator;
@@ -18,29 +20,31 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import bku.fitnessbku.gym.GymFragmentStatePagerAdapter;
+import bku.fitnessbku.target.TargetFragmentStatePagerAdapter;
 
 /**
- * Created by 51202 on 9/6/2017.
+ * Created by 51202 on 9/10/2017.
  */
 
-public class GymActivity extends AppCompatActivity {
+public class TargetActivity extends AppCompatActivity {
 
     private Drawer result = null;
     private AccountHeader headerResult = null;
+    public Toolbar toolbar;
 
     private IProfile profile;
-
     @Override
     public void onCreate(Bundle savedBundle){
         super.onCreate(savedBundle);
         setContentView(R.layout.activity_viewpager_basic);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(R.string.menu_gym);
-        GymFragmentStatePagerAdapter pagerAdapter = new GymFragmentStatePagerAdapter(getSupportFragmentManager());
+        getSupportActionBar().setTitle("Target");
+        TargetFragmentStatePagerAdapter pagerAdapter = new TargetFragmentStatePagerAdapter(getSupportFragmentManager());
         ViewPager gymPager = findViewById(R.id.pager);
         gymPager.setAdapter(pagerAdapter);
+
 
         profile = new ProfileDrawerItem().withName("Guest").withIcon(getResources().getDrawable(R.drawable.profile2));
 
@@ -64,27 +68,27 @@ public class GymActivity extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             switch ((int)drawerItem.getIdentifier()){
-                                case 2:
-                                    intent = new Intent(GymActivity.this, TargetActivity.class);
+                                case 1:
+                                    intent = new Intent(TargetActivity.this, GymActivity.class);
                                     break;
                                 case 3:
-                                    intent = new Intent(GymActivity.this, FoodActivity.class);
+                                    intent = new Intent(TargetActivity.this, FoodActivity.class);
                                     break;
                                 case 4:
-                                    intent = new Intent(GymActivity.this, HistoryActivity.class);
+                                    intent = new Intent(TargetActivity.this, HistoryActivity.class);
                                     break;
                                 case 5:
-                                    intent = new Intent(GymActivity.this, BodyInfoActivity.class);
+                                    intent = new Intent(TargetActivity.this, BodyInfoActivity.class);
                                     break;
                                 case 6:
-                                    intent = new Intent(GymActivity.this, GymRoomActivity.class);
+                                    intent = new Intent(TargetActivity.this, GymRoomActivity.class);
                                     break;
                                 default:
                                     break;
                             }
                             if (intent != null) {
-                                GymActivity.this.startActivity(intent);
-                                GymActivity.this.finish();
+                                TargetActivity.this.startActivity(intent);
+                                TargetActivity.this.finish();
                             }
                         }
                         return false;
@@ -92,7 +96,7 @@ public class GymActivity extends AppCompatActivity {
                 })
                 .withSavedInstance(savedBundle)
                 .withShowDrawerOnFirstLaunch(true).build();
-        result.setSelection(1);
+        result.setSelection(2);
     }
 
     private void buildHeader(boolean compact, Bundle savedInstanceState) {
@@ -122,6 +126,22 @@ public class GymActivity extends AppCompatActivity {
         } else {
             this.finish();
             super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_edit:
+                item.setVisible(false);
+                toolbar.getMenu().findItem(R.id.menu_save).setVisible(true);
+                return true;
+            case R.id.menu_save:
+                item.setVisible(false);
+                toolbar.getMenu().findItem(R.id.menu_edit).setVisible(true);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

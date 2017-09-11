@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    >
+    <LinearLayout
+        android:id="@+id/layoutImgRoom"
+        android:layout_width="108dp"
+        android:layout_height="108dp">
+        <ImageView
+            android:id="@+id/imgRoomIcon"
+            android:src="@drawable/thientruong_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:paddingLeft="56dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_toEndOf="@+id/layoutImgRoom"
+        android:layout_toRightOf="@+id/layoutImgRoom"
+        android:id="@+id/txtGymRoomName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thien Truong"
+        android:paddingStart="56dp"
+        tools:ignore="RtlSymmetry" />
+    <LinearLayout
+        android:layout_below="@+id/txtGymRoomName"
+        android:layout_toEndOf="@+id/layoutImgRoom"
+        android:layout_toRightOf="@+id/layoutImgRoom"
+        android:id="@+id/lnlPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone: "
+            />
+        <TextView
+            android:gravity="end"
+            android:id="@+id/txtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01234569875"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lnlPhone"
+        android:layout_toEndOf="@+id/layoutImgRoom"
+        android:layout_toRightOf="@+id/layoutImgRoom"
+        android:id="@+id/lnlAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount: "
+            />
+        <TextView
+            android:gravity="end"
+            android:text="100 LuyBanBich.st, D10, HCMC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAddress"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lnlAddress"
+        android:layout_toEndOf="@+id/layoutImgRoom"
+        android:layout_toRightOf="@+id/layoutImgRoom"
+        android:id="@+id/lnlPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price: "/>
+        <TextView
+            android:gravity="end"
+            android:text="10$/month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPrice"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtCoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Muc tieu: "
+            android:textSize="24sp"
+            />
+        <Spinner
+            android:id="@+id/spMuscleMenu"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/txtCoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtCoLabel"
+            ></Spinner>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtSectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vung co: "
+            android:textSize="24sp"
+            />
+        <Spinner
+            android:id="@+id/spMusclePosition"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/txtSectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtSectionLabel"
+            ></Spinner>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtSizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="So do vung co: "
+            android:textSize="24sp"
+            />
+        <EditText
+            android:layout_marginLeft="32dp"
+            android:minWidth="56dp"
+            android:layout_toRightOf="@+id/txtSizeLabel"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtSizeLabel"
+            ></EditText>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtCountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="So buoi tap: "
+            android:textSize="24sp"
+            />
+        <EditText
+            android:layout_marginLeft="32dp"
+            android:minWidth="56dp"
+            android:layout_toRightOf="@+id/txtCountLabel"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtCountLabel"
+            ></EditText>
+    </RelativeLayout>
+
+</LinearLayout>

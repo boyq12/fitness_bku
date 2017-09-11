@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/lnlImgGym"
+        android:layout_width="108dp"
+        android:layout_height="108dp">
+        <ImageView
+            android:id="@+id/imgGym"
+            android:src="@drawable/deadlif2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:gravity="center"
+        android:text="Dead lifting"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtGymName"
+        android:layout_toRightOf="@+id/lnlImgGym"
+        android:layout_toEndOf="@+id/lnlImgGym" />
+    <LinearLayout
+        android:layout_below="@+id/txtGymName"
+        android:layout_toRightOf="@+id/lnlImgGym"
+        android:layout_toEndOf="@+id/lnlImgGym"
+        android:id="@+id/lnlCalorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calories burned: "
+            />
+        <TextView
+            android:gravity="end"
+            android:id="@+id/txtCalorie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="150 kcal"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lnlCalorie"
+        android:layout_toRightOf="@+id/lnlImgGym"
+        android:layout_toEndOf="@+id/lnlImgGym"
+        android:id="@+id/lnlAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration: "
+            />
+        <TextView
+            android:gravity="end"
+            android:text="30 minutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAmount"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lnlAmount"
+        android:layout_toRightOf="@+id/lnlImgGym"
+        android:layout_toEndOf="@+id/lnlImgGym"
+        android:id="@+id/lnlDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intensity: "/>
+        <TextView
+            android:gravity="end"
+            android:text="Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDescription"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -31,17 +31,43 @@ public class MainActivity extends AppCompatActivity {
                 .withToolbar(toolbar)
                 .withHasStableIds(true)
                 .withItemAnimator(new AlphaCrossFadeAnimator())
-                .addDrawerItems(new PrimaryDrawerItem().withName(R.string.menu_gym).withDescription(R.string.menu_gym).withIcon(R.drawable.gym_icon).withIdentifier(1).withSelectable(true))
+                .addDrawerItems(new PrimaryDrawerItem().withName(R.string.menu_gym).withDescription(R.string.menu_gym).withIcon(R.drawable.gym_icon).withIdentifier(1).withSelectable(true),
+                        new PrimaryDrawerItem().withName("Target").withDescription("Your target").withIcon(R.drawable.gym_icon).withIdentifier(2).withSelectable(true),
+                        new PrimaryDrawerItem().withName("Food Schedule").withDescription("Food schedule and setting").withIcon(R.drawable.gym_icon).withIdentifier(3).withSelectable(true),
+                        new PrimaryDrawerItem().withName("Gym History").withDescription("Gym history").withIcon(R.drawable.gym_icon).withIdentifier(4).withSelectable(true),
+                        new PrimaryDrawerItem().withName("Body Information").withDescription("Body information").withIcon(R.drawable.gym_icon).withIdentifier(5).withSelectable(true),
+                        new PrimaryDrawerItem().withName("Gym Room").withDescription("Nearby gym room").withIcon(R.drawable.gym_icon).withIdentifier(6).withSelectable(true))
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem != null) {
                             Intent intent = null;
-                            if (drawerItem.getIdentifier() == 1) {
-                                intent = new Intent(MainActivity.this, GymActivity.class);
+                            switch ((int)drawerItem.getIdentifier()){
+                                case 1:
+                                    intent = new Intent(MainActivity.this, GymActivity.class);
+                                    break;
+                                case 2:
+                                    intent = new Intent(MainActivity.this, TargetActivity.class);
+                                    break;
+                                case 3:
+                                    intent = new Intent(MainActivity.this, FoodActivity.class);
+                                    break;
+                                case 4:
+                                    intent = new Intent(MainActivity.this, HistoryActivity.class);
+                                    break;
+                                case 5:
+                                    intent = new Intent(MainActivity.this, BodyInfoActivity.class);
+                                    break;
+                                case 6:
+                                    intent = new Intent(MainActivity.this, GymRoomActivity.class);
+                                    break;
+                                default:
+                                    intent = new Intent(MainActivity.this, GymActivity.class);
+                                    break;
                             }
                             if (intent != null) {
                                 MainActivity.this.startActivity(intent);
+                                MainActivity.this.finish();
                             }
                         }
                         return false;
@@ -49,15 +75,9 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .withSavedInstance(savedInstanceState).withShowDrawerOnFirstLaunch(true)
                 .build();
+        result.setSelection(1);
     }
 
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        //add the values which need to be saved from the drawer to the bundle
-        outState = result.saveInstanceState(outState);
-        super.onSaveInstanceState(outState);
-    }
 
     @Override
     public void onBackPressed() {

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:text="Gyms Amount"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pcGymAmount"
+            android:layout_gravity="center"
+            android:layout_width="256dp"
+            android:layout_height="300dp"/>
+
+        <TextView
+            android:text="Calories Burned"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bcCaloriesBurned"
+            android:layout_gravity="center"
+            android:layout_width="256dp"
+            android:layout_height="300dp">
+        </com.github.mikephil.charting.charts.BarChart>
+    </LinearLayout>
+
+
+</ScrollView>

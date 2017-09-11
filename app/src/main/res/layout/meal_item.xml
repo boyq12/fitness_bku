@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutImgMeal"
+        android:layout_width="108dp"
+        android:layout_height="108dp">
+        <ImageView
+            android:id="@+id/imgMeal"
+            android:src="@drawable/chicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:paddingLeft="56dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_toEndOf="@+id/layoutImgMeal"
+        android:layout_toRightOf="@+id/layoutImgMeal"
+        android:id="@+id/txtFoodName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chicken" />
+    <LinearLayout
+        android:layout_below="@+id/txtFoodName"
+        android:layout_toEndOf="@+id/layoutImgMeal"
+        android:layout_toRightOf="@+id/layoutImgMeal"
+        android:id="@+id/lnlCalorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calorie: "
+            />
+        <TextView
+            android:gravity="end"
+            android:id="@+id/txtCalorie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="150 kcal"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lnlCalorie"
+        android:layout_toEndOf="@+id/layoutImgMeal"
+        android:layout_toRightOf="@+id/layoutImgMeal"
+        android:id="@+id/lnlAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount: "
+            />
+        <TextView
+            android:gravity="end"
+            android:text="500gr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAmount"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lnlAmount"
+        android:layout_toEndOf="@+id/layoutImgMeal"
+        android:layout_toRightOf="@+id/layoutImgMeal"
+        android:id="@+id/lnlDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: "/>
+        <TextView
+            android:text="This is chicken meet."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDescription"/>
+    </LinearLayout>
+</RelativeLayout>

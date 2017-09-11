@@ -108,6 +108,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="cardview-v7-26.0.0" level="project" />
     <orderEntry type="library" name="support-core-ui-26.0.0" level="project" />
     <orderEntry type="library" name="support-media-compat-26.0.0" level="project" />
     <orderEntry type="library" name="constraint-layout-1.0.2" level="project" />
@@ -118,19 +119,25 @@
     <orderEntry type="library" name="recyclerview-v7-26.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="espresso-core-3.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="espresso-idling-resource-3.0.1" level="project" />
+    <orderEntry type="library" name="play-services-basement-11.2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" name="transition-26.0.0" level="project" />
+    <orderEntry type="library" name="play-services-base-11.2.2" level="project" />
     <orderEntry type="library" name="materialize-1.0.3" level="project" />
     <orderEntry type="library" scope="TEST" name="runner-1.0.1" level="project" />
     <orderEntry type="library" name="support-fragment-26.0.0" level="project" />
+    <orderEntry type="library" name="play-services-maps-11.2.2" level="project" />
     <orderEntry type="library" name="animated-vector-drawable-26.0.0" level="project" />
     <orderEntry type="library" name="constraint-layout-solver-1.0.2" level="project" />
     <orderEntry type="library" name="support-compat-26.0.0" level="project" />
+    <orderEntry type="library" name="YouTubeAndroidPlayerApi" level="project" />
+    <orderEntry type="library" name="MPAndroidChart-v3.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="javax.inject-1" level="project" />
     <orderEntry type="library" name="itemanimators-1.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="kxml2-2.3.0" level="project" />
     <orderEntry type="library" name="support-v4-26.0.0" level="project" />
     <orderEntry type="library" name="support-annotations-26.0.0" level="project" />
+    <orderEntry type="library" name="material-spinner-1.1.0" level="project" />
     <orderEntry type="library" name="materialdrawer-5.9.5" level="project" />
     <orderEntry type="library" name="fastadapter-2.6.3" level="project" />
     <orderEntry type="library" scope="TEST" name="javawriter-2.1.1" level="project" />
@@ -140,6 +147,7 @@
     <orderEntry type="library" name="appcompat-v7-26.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="rules-1.0.1" level="project" />
+    <orderEntry type="library" name="play-services-tasks-11.2.2" level="project" />
     <orderEntry type="library" name="iconics-core-2.9.1" level="project" />
   </component>
 </module>

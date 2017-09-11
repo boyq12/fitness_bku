@@ -2,6 +2,7 @@ package bku.fitnessbku;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,18 +19,17 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import bku.fitnessbku.gym.GymFragmentStatePagerAdapter;
+import bku.fitnessbku.history.HistoryFragmentStatePagerAdapter;
 
 /**
- * Created by 51202 on 9/6/2017.
+ * Created by 51202 on 9/10/2017.
  */
 
-public class GymActivity extends AppCompatActivity {
-
+public class HistoryActivity extends AppCompatActivity {
     private Drawer result = null;
     private AccountHeader headerResult = null;
 
     private IProfile profile;
-
     @Override
     public void onCreate(Bundle savedBundle){
         super.onCreate(savedBundle);
@@ -37,15 +37,13 @@ public class GymActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(R.string.menu_gym);
-        GymFragmentStatePagerAdapter pagerAdapter = new GymFragmentStatePagerAdapter(getSupportFragmentManager());
+        getSupportActionBar().setTitle("History");
+        HistoryFragmentStatePagerAdapter pagerAdapter = new HistoryFragmentStatePagerAdapter(getSupportFragmentManager());
         ViewPager gymPager = findViewById(R.id.pager);
         gymPager.setAdapter(pagerAdapter);
-
         profile = new ProfileDrawerItem().withName("Guest").withIcon(getResources().getDrawable(R.drawable.profile2));
 
         buildHeader(false, savedBundle);
-
         result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
@@ -64,27 +62,27 @@ public class GymActivity extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             switch ((int)drawerItem.getIdentifier()){
+                                case 1:
+                                    intent = new Intent(HistoryActivity.this, GymActivity.class);
+                                    break;
                                 case 2:
-                                    intent = new Intent(GymActivity.this, TargetActivity.class);
+                                    intent = new Intent(HistoryActivity.this, TargetActivity.class);
                                     break;
                                 case 3:
-                                    intent = new Intent(GymActivity.this, FoodActivity.class);
-                                    break;
-                                case 4:
-                                    intent = new Intent(GymActivity.this, HistoryActivity.class);
+                                    intent = new Intent(HistoryActivity.this, FoodActivity.class);
                                     break;
                                 case 5:
-                                    intent = new Intent(GymActivity.this, BodyInfoActivity.class);
+                                    intent = new Intent(HistoryActivity.this, BodyInfoActivity.class);
                                     break;
                                 case 6:
-                                    intent = new Intent(GymActivity.this, GymRoomActivity.class);
+                                    intent = new Intent(HistoryActivity.this, GymRoomActivity.class);
                                     break;
                                 default:
                                     break;
                             }
                             if (intent != null) {
-                                GymActivity.this.startActivity(intent);
-                                GymActivity.this.finish();
+                                HistoryActivity.this.startActivity(intent);
+                                HistoryActivity.this.finish();
                             }
                         }
                         return false;
@@ -92,9 +90,8 @@ public class GymActivity extends AppCompatActivity {
                 })
                 .withSavedInstance(savedBundle)
                 .withShowDrawerOnFirstLaunch(true).build();
-        result.setSelection(1);
+        result.setSelection(4);
     }
-
     private void buildHeader(boolean compact, Bundle savedInstanceState) {
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()

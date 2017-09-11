@@ -21,7 +21,7 @@ public class FoodFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new TodayMealFragment();
             case 1:
-                return WeekScheduleFragment.newInstance(position);
+                return new FoodSettingFragment();
             default:
                 return TodayScheduleFragment.newInstance(0);
         }

@@ -13,8 +13,8 @@
             android:id="@+id/txtCoLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Muc tieu: "
-            android:textSize="24sp"
+            android:text="Target: "
+            android:textSize="18sp"
             />
         <Spinner
             android:id="@+id/spMuscleMenu"
@@ -33,8 +33,8 @@
             android:id="@+id/txtSectionLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vung co: "
-            android:textSize="24sp"
+            android:text="Muscle Area: "
+            android:textSize="18sp"
             />
         <Spinner
             android:id="@+id/spMusclePosition"
@@ -53,8 +53,8 @@
             android:id="@+id/txtSizeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="So do vung co: "
-            android:textSize="24sp"
+            android:text="Muscle size: "
+            android:textSize="18sp"
             />
         <EditText
             android:layout_marginLeft="32dp"
@@ -74,8 +74,8 @@
             android:id="@+id/txtCountLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="So buoi tap: "
-            android:textSize="24sp"
+            android:text="Number of training day: "
+            android:textSize="18sp"
             />
         <EditText
             android:layout_marginLeft="32dp"

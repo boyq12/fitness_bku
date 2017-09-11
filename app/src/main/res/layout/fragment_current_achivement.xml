@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today Achievement"
+            android:gravity="center"
+            android:textSize="24sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="81.1%"
+            android:textSize="56sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Information"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="16dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtHeightLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height: "
+                />
+            <TextView
+                android:gravity="end"
+                android:layout_toRightOf="@+id/txtHeightLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/txtHeightLabel"
+                android:text="156cm"/>
 
-</LinearLayout>
+            <TextView
+                android:layout_below="@+id/txtHeightLabel"
+                android:id="@+id/txtWeightLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight: "
+                />
+            <TextView
+                android:layout_below="@+id/txtHeightLabel"
+                android:gravity="end"
+                android:layout_toRightOf="@+id/txtWeightLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/txtWeightLabel"
+                android:text="72kg"/>
+
+            <TextView
+                android:layout_below="@+id/txtWeightLabel"
+                android:id="@+id/txtHandRingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight: "
+                />
+            <TextView
+                android:layout_below="@+id/txtWeightLabel"
+                android:gravity="end"
+                android:layout_toRightOf="@+id/txtHandRingLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/txtHandRingLabel"
+                android:text="26cm"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preview"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            />
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bcPreviewTarget"
+            android:layout_gravity="center"
+            android:layout_width="256dp"
+            android:layout_height="300dp">
+        </com.github.mikephil.charting.charts.BarChart>
+    </LinearLayout>
+
+
+</ScrollView>

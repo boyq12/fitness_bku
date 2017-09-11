@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp">
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtCoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favorite foods: "
+            android:textSize="24sp"
+            />
+        <bku.fitnessbku.custom_entity.MultiSelectionSpinner
+            android:id="@+id/spFavoriteFood"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/txtCoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtCoLabel"
+            ></bku.fitnessbku.custom_entity.MultiSelectionSpinner>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtSectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disease: "
+            android:textSize="24sp"
+            />
+        <bku.fitnessbku.custom_entity.MultiSelectionSpinner
+            android:id="@+id/spDisease"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/txtSectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtSectionLabel"
+            ></bku.fitnessbku.custom_entity.MultiSelectionSpinner>
+    </RelativeLayout>
 </LinearLayout>

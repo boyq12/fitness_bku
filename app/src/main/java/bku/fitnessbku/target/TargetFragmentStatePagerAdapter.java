@@ -19,7 +19,7 @@ public class TargetFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return TodayScheduleFragment.newInstance(position);
+                return new CurrentAchivementFragment();
             case 1:
                 return new TargetSettingFragment();
             default:
